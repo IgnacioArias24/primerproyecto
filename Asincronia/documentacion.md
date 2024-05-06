@@ -28,7 +28,8 @@
 ]
 
 
-**parametros****/posts/:id_post**
+**GET****/posts/:id_post**
+**parametros**
 id_post: numero
 { 
     "userId": 1, 
