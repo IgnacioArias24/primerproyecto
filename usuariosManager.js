@@ -7,4 +7,5 @@ const obtenerDatosUsuario = ()=>{
     }
 }
 
+console.log(obtenerDatosUsuarios())
 module.exports = obtenerDatosUsuario()
