@@ -1,5 +1,5 @@
 const obtenerDatosUsuario = ()=>{
-    return{
+    return {
         'NOMBRESIT 0': 'diogenes',
         DNI_usuariO: '33211343',
         EDAd_usuario_1: '2',
@@ -7,5 +7,5 @@ const obtenerDatosUsuario = ()=>{
     }
 }
 
-console.log(obtenerDatosUsuarios())
-module.exports = obtenerDatosUsuario()
+
+module.exports = {obtenerDatosUsuario}
