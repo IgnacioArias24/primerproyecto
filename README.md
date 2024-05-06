@@ -1,2 +1,0 @@
-# primerproyecto
-mi landing page
