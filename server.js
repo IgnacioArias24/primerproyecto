@@ -1,5 +1,9 @@
 const password_secret = require('./config')
 
+
+console.log(password_secret)
+
+
 console.log(password_secret)
 
 
