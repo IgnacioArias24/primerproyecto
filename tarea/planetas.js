@@ -8,13 +8,13 @@ class CustomError{
     }
 }
 const Error={
-    PLANETA_NO_ENCONTRADO : new CostumError('Error, planeta no encontrado', `${nombre}`, 2),
-    ERROR_INTERNO_DEL_SERVIDOR : new CostumError('Error interno del servidor',`${nombre}`,1)
+    PLANETA_NO_ENCONTRADO : new CustomError('Error, planeta no encontrado', `${nombre}`, 2),
+    ERROR_INTERNO_DEL_SERVIDOR : new CustomError('Error interno del servidor',`${nombre}`,1)
 }
 
 const buscarPlanetaPorIdPlaneta = async (id_planeta) =>{
     try{
-        const response = await fetch( URL_API + `planets${id_planeta}`);
+        const response = await fetch( URL_API + `planets/${id_planeta}`);
         if(response.ok){
             throw Error.ERROR_INTERNO_DEL_SERVIDOR
         }
