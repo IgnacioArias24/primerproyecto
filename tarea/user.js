@@ -1,4 +1,5 @@
 const { URL_API } = require('./config');
+const {ERRORES } = require('./errores');
 
 const obtenerTodosLosUsuarios = async () => {
     const response = await fetch(URL_API + '/users');
@@ -8,17 +9,64 @@ const obtenerTodosLosUsuarios = async () => {
 }
 
 const obtenerUsuarioPorId = async (id_usuario) => {
-    const response = await fetch ( URL_API + `/users/${id_usuario}`);
-    if(response.status === 404){
-        console.error( 'Error: Usuario no encontrado')
+    try{
+        const response = await fetch ( URL_API + `/users/${id_usuario}`);
+        if(response.ok){
+            throw ERRORES.FALLO_CRITICO_SERVIDOR
+        }
+        if(response.status === 404){
+            console.error( 'Error: Usuario no encontrado')
+            throw ERRORES.USUARIO_NO_ENCONTRADO
+        }
+        if(response.status === 500){
+            throw ERRORES.ERROR_INTERNO_SERVIDOR
+        }
+        else {
+        const usuario = await response.json();
+        console.log(usuario)
+        return usuario;
+        }     
     }
-    else {
-    const usuario = await response.json();
-    console.log(usuario)
-    return usuario;
-    }  
+    catch(error){
+        console.log(error)
+        // throw error
+    }
+};
+
+const prueba = (condicion) =>{
+    if(condicion){
+        console.log('todo esta bien')
+    }
+    else{
+        throw {message:'nada esta bien', code: 1}
+    }
+}
+
+const verificarEdad = async (edad) =>{
+    try{
+        if(edad >= 18 && edad <= 60){
+            console.log('edad correcta')
+            const usuario = await obtenerUsuarioPorId(100)
+        }
+        else{
+            throw {message: 'Edad invalida', code: 2}
+        }
+    }
+    catch(error){
+        throw error
+    }
 }
 
 
+// const ejecutarFunciones = async () => {
+//     try{
+//         prueba(false)
+//     }
+//     catch(mensaje){
+//         console.error('Error: ' + mensaje)
+//     }
+// }
+
 // obtenerTodosLosUsuarios()
-obtenerUsuarioPorId(100)
+obtenerUsuarioPorId(5)
+// ejecutarFunciones()
