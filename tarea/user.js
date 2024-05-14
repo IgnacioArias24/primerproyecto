@@ -33,6 +33,8 @@ const obtenerUsuarioPorId = async (id_usuario) => {
     }
 };
 
+obtenerUsuarioPorId(5)
+
 const prueba = (condicion) =>{
     if(condicion){
         console.log('todo esta bien')
@@ -58,15 +60,14 @@ const verificarEdad = async (edad) =>{
 }
 
 
-// const ejecutarFunciones = async () => {
-//     try{
-//         prueba(false)
-//     }
-//     catch(mensaje){
-//         console.error('Error: ' + mensaje)
-//     }
-// }
+const ejecutarFunciones = async () => {
+    try{
+        prueba(false)
+        verificarEdad(30)
+        console.log('Hola desde un try')
+    }
+    catch(objeto_error){
+        console.error('Error: CODE ' + objeto_error.code + ' ' + objeto_error.message)
+    }
+}
 
-// obtenerTodosLosUsuarios()
-obtenerUsuarioPorId(5)
-// ejecutarFunciones()
