@@ -32,4 +32,4 @@ const obtenerListadoDeEmailsDeLosComentarios = async (id_post) =>{
 // obtenerTodosLosPosteos()
 // obtenerPosteoPorId(5)
 // obtenerComentariosDePosteoPorId(4)
-obtenerListadoDeEmailsDeLosComentarios(1)
+obtenerListadoDeEmailsDeLosComentarios(4)
