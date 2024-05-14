@@ -13,3 +13,16 @@ buscarPlanetaPorIdPlaneta(id_planeta)
     ERRORES POSIBLES (response): 
     - Que el status sea 404 
     - Que el ok sea false
+
+
+**errores.js**
+
+- Crear una clase llamada CustomError(mensaje, nombre, codigo)
+- Crear un mapa de errores con los errores PLANETA_NO_ENCONTRADO, ERROR_INTERNO_DEL_SERVIDOR
+
+
+### REGLAS
+
+- Debe usarse async y await para el manejo de asincronia
+- Debe usarse fetch para el consumo de la api
+- Debe usarse try/catch para el manejo de errores

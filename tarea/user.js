@@ -21,11 +21,10 @@ const obtenerUsuarioPorId = async (id_usuario) => {
         if(response.status === 500){
             throw ERRORES.ERROR_INTERNO_SERVIDOR
         }
-        else {
         const usuario = await response.json();
         console.log(usuario)
         return usuario;
-        }     
+            
     }
     catch(error){
         console.log(error)
