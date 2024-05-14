@@ -1,5 +1,5 @@
 const { URL_API } = require('./config');
-const {ERRORES } = require('./errores');
+const { ERRORES } = require('./errores');
 
 const obtenerTodosLosUsuarios = async () => {
     const response = await fetch(URL_API + '/users');
@@ -33,7 +33,7 @@ const obtenerUsuarioPorId = async (id_usuario) => {
     }
 };
 
-obtenerUsuarioPorId(5)
+obtenerUsuarioPorId(1)
 
 const prueba = (condicion) =>{
     if(condicion){
@@ -62,7 +62,7 @@ const verificarEdad = async (edad) =>{
 
 const ejecutarFunciones = async () => {
     try{
-        prueba(false)
+        prueba(true)
         verificarEdad(30)
         console.log('Hola desde un try')
     }
