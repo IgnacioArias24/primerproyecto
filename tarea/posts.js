@@ -16,7 +16,7 @@ const obtenerPosteoPorId = async (id_post) =>{
 }
 
 const obtenerComentariosDePosteoPorId = async (id_post) =>{
-    const response = await fetch(URL_API + `/comments/${id_post}`);
+    const response = await fetch(URL_API + `/posts/${id_post}/comments/`);
     const comentarios = await response.json();
     console.log(comentarios)
     return comentarios
@@ -32,4 +32,4 @@ const obtenerListadoDeEmailsDeLosComentarios = async (id_post) =>{
 // obtenerTodosLosPosteos()
 // obtenerPosteoPorId(5)
 // obtenerComentariosDePosteoPorId(4)
-obtenerListadoDeEmailsDeLosComentarios(4)
+obtenerListadoDeEmailsDeLosComentarios(1)

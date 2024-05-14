@@ -9,11 +9,16 @@ const obtenerTodosLosUsuarios = async () => {
 
 const obtenerUsuarioPorId = async (id_usuario) => {
     const response = await fetch ( URL_API + `/users/${id_usuario}`);
+    if(response.status === 404){
+        console.error( 'Error: Usuario no encontrado')
+    }
+    else {
     const usuario = await response.json();
     console.log(usuario)
     return usuario;
+    }  
 }
 
 
-obtenerTodosLosUsuarios()
-obtenerUsuarioPorId(4)
+// obtenerTodosLosUsuarios()
+obtenerUsuarioPorId(100)
